@@ -4,7 +4,7 @@ export default function RightCard({temp}) {
 
 
 
-  
+
 
   
   return (
@@ -19,7 +19,7 @@ export default function RightCard({temp}) {
               </div>
               </span>
               <div>
-               {Math.round(temp)}
+               {Math.round()}
               </div>
             </div>
     </div>
