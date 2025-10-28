@@ -11,7 +11,7 @@ export default function Advanced() {
   const GetData = async () => {
     try {
       const res = await axios.get(
-        'https://api.openweathermap.org/data/2.5/forecast?q=buxoro&units=metric&appid=7ff55054f53ec5c371bb065ff9e9f223&lang=ru'
+        'https://api.openweathermap.org/data/2.5/forecast?q=bukhara&units=metric&appid=7ff55054f53ec5c371bb065ff9e9f223&lang=ru'
       )
       console.log(res.data )
       setPosts(res.data)
