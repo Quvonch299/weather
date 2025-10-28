@@ -87,7 +87,7 @@ export default function Advanced() {
       }
       {
           posts ? (
-      <div className="right p-3 bg-green-500 rounded-2xl opacity-70 hover:opacity-100 duration-300 w-[260px]">
+      <div className="right p-3 ml-10 bg-green-500 rounded-2xl opacity-70 hover:opacity-100 duration-300 w-[260px]">
         <div className='mt-10 mb-10 text-3xl text-white'>
           <h2>Other city</h2>
         </div>
