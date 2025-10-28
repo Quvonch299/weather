@@ -25,7 +25,7 @@ export default function Advanced() {
   }, [])
 
   return (
-    <div className='ml-10 mt-9 flex justify-between'>
+    <div className='ml-10 mt-9 flex justify-between '>
       {
         posts ? (
           <div className="left w-182">
