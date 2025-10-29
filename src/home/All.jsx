@@ -10,7 +10,7 @@ export default function All() {
     <div >
         <Input city={city} setCity={setCity} />
         <Pages />
-             <Advanced city={city} setCity={setCity} />
+        <Advanced city={city} setCity={setCity} />
     </div>
   )
 }

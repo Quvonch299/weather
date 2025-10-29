@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useCallback } from 'react'
 import Card from '../ui/Card'
 import RightCard from '../ui/rightCard'
 import axios from 'axios'
@@ -37,7 +37,7 @@ export default function Advanced({ city,setCity }) {
   }
 
 
-  const GetData = async () => {
+  const GetData = useCallback(async () => {
     setIsLoading(true)
     try {
       const res = await axios.get(
@@ -50,14 +50,14 @@ export default function Advanced({ city,setCity }) {
     } finally {
       setIsLoading(false)
     }
-  }
+  }, [city])
 
   useEffect(() => {
     if (city) {
       GetData()
-setCity('')
+      setCity('')
     }
-  }, [city])
+  }, [city, GetData, setCity])
 
   return (
     <div className='container mx-auto px-4 mt-9 flex justify-between'>
@@ -70,7 +70,7 @@ setCity('')
         </div>
       ) : posts ? (
           <div className="left flex-1">
-            <div className="tepa flex p-6 rounded-2xl bg-gradient-to-r from-blue-500 to-purple-600 shadow-xl">
+            <div className="tepa flex p-6 rounded-2xl bg-linear-to-r from-blue-500 to-purple-600 shadow-xl">
               <div className="left text-white flex-1">
                 <div className="transform hover:scale-105 transition-transform duration-300 flex justify-center">
                   {getWeatherIcon(posts.list[0].weather[0].main, 100)}
@@ -112,7 +112,7 @@ setCity('')
               </div>
             </div>
 
-            <div className="past mt-12 rounded-2xl bg-gradient-to-br from-indigo-600/30 to-purple-600/30 backdrop-blur-md p-8 shadow-2xl border border-white/10">
+            <div className="past mt-12 rounded-2xl bg-linear-to-br from-indigo-600/30 to-purple-600/30 backdrop-blur-md p-8 shadow-2xl border border-white/10">
               <div>
                 <h2 className='text-white mb-6 text-3xl font-bold flex items-center'>
                   <span className="mr-3">🌤️</span>
@@ -145,7 +145,7 @@ setCity('')
       }
       {
         posts ? (
-          <div className="right hidden lg:block p-6 mx-8 bg-gradient-to-bl from-emerald-500/20 to-teal-500/20 backdrop-blur-md rounded-2xl hover:shadow-2xl transition-all duration-300 w-80 border border-white/10">
+          <div className="right hidden lg:block p-6 mx-8 bg-linear-to-bl from-emerald-500/20 to-teal-500/20 backdrop-blur-md rounded-2xl hover:shadow-2xl transition-all duration-300 w-80 border border-white/10">
             <div className='mb-8 text-white'>
               <h2 className='text-3xl font-bold flex items-center'>
                 <span className="mr-3">🌍</span>
@@ -157,7 +157,7 @@ setCity('')
               <RightCard temp={posts.list[1].main.temp} wind={posts.list[5].wind.speed} />
               <RightCard temp={posts.list[10].main.temp} wind={posts.list[23].wind.speed} />
               <RightCard temp={posts.list[30].main.temp} wind={posts.list[23].wind.speed} />
-              <button className='w-full text-white py-4 px-6 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 transition-all duration-300 rounded-xl font-semibold shadow-lg flex items-center justify-center gap-2'>
+              <button className='w-full text-white py-4 px-6 bg-linear-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 transition-all duration-300 rounded-xl font-semibold shadow-lg flex items-center justify-center gap-2'>
                 <span>EXPLORE MORE</span>
                 <GrLinkNext />
               </button>
