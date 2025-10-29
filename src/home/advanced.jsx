@@ -3,17 +3,17 @@ import Card from '../ui/Card'
 import RightCard from '../ui/rightCard'
 import axios from 'axios'
 
-export default function Advanced() {
+export default function Advanced({ city }) {
   const [posts, setPosts] = useState(null)
- 
-   
+
+
 
   const GetData = async () => {
     try {
       const res = await axios.get(
-        'https://api.openweathermap.org/data/2.5/forecast?q=buxoro&units=metric&appid=7ff55054f53ec5c371bb065ff9e9f223&lang=ru'
+        `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=7ff55054f53ec5c371bb065ff9e9f223&lang=ru`
       )
-      console.log(res.data )
+      console.log(res.data)
       setPosts(res.data)
     } catch (e) {
       console.log('Error:', e)
@@ -21,8 +21,10 @@ export default function Advanced() {
   }
 
   useEffect(() => {
-    GetData()
-  }, [])
+    if (city) {
+      GetData()
+    }
+  }, [city])
 
   return (
     <div className='ml-10 mt-9 flex justify-between '>
@@ -69,12 +71,12 @@ export default function Advanced() {
                 <h2 className='text-white mb-3 text-2xl'>Today's Highlight</h2>
               </div>
               <div className='grid grid-cols-3 gap-5 justify-center items-center'>
-                <Card temp={posts.list[0].main.temp} wind={posts.list[0].wind.speed}/>
-                <Card temp={posts.list[3].main.temp} wind={posts.list[1].wind.speed}/>
-                <Card temp={posts.list[1].main.temp} wind={posts.list[2].wind.speed}/>
-                <Card temp={posts.list[2].main.temp} wind={posts.list[6].wind.speed}/>
-                <Card temp={posts.list[4].main.temp} wind={posts.list[10].wind.speed}/>
-                <Card temp={posts.list[5].main.temp} wind={posts.list[20].wind.speed}/>
+                <Card temp={posts.list[0].main.temp} wind={posts.list[0].wind.speed} />
+                <Card temp={posts.list[3].main.temp} wind={posts.list[1].wind.speed} />
+                <Card temp={posts.list[1].main.temp} wind={posts.list[2].wind.speed} />
+                <Card temp={posts.list[2].main.temp} wind={posts.list[6].wind.speed} />
+                <Card temp={posts.list[4].main.temp} wind={posts.list[10].wind.speed} />
+                <Card temp={posts.list[5].main.temp} wind={posts.list[20].wind.speed} />
               </div>
             </div>
           </div>
@@ -86,23 +88,23 @@ export default function Advanced() {
         )
       }
       {
-          posts ? (
-      <div className="right p-3 ml-10 bg-green-500 rounded-2xl opacity-70 hover:opacity-100 duration-300 w-[260px]">
-        <div className='mt-10 mb-10 text-3xl text-white'>
-          <h2>Other city</h2>
-        </div>
-        <div className='grid grid-cols-1 gap-5'>
-          <RightCard  temp={posts.list[0].main.temp} wind={posts.list[34].wind.speed}/>
-          <RightCard temp={posts.list[1].main.temp} wind={posts.list[5].wind.speed} />
-          <RightCard temp={posts.list[10].main.temp} wind={posts.list[23].wind.speed} />
-          <RightCard temp={posts.list[30].main.temp} wind={posts.list[23].wind.speed} />
-          <button className='w-60 text-white p-4 border-black hover:bg-green-500 hover:border duration-500 rounded-2xl bg-blue-600'>
-            SEE MORE
-          </button>
-        </div>
-      </div>
+        posts ? (
+          <div className="right p-3 ml-10 bg-green-500 rounded-2xl opacity-70 hover:opacity-100 duration-300 w-[260px]">
+            <div className='mt-10 mb-10 text-3xl text-white'>
+              <h2>Other city</h2>
+            </div>
+            <div className='grid grid-cols-1 gap-5'>
+              <RightCard temp={posts.list[0].main.temp} wind={posts.list[34].wind.speed} />
+              <RightCard temp={posts.list[1].main.temp} wind={posts.list[5].wind.speed} />
+              <RightCard temp={posts.list[10].main.temp} wind={posts.list[23].wind.speed} />
+              <RightCard temp={posts.list[30].main.temp} wind={posts.list[23].wind.speed} />
+              <button className='w-60 text-white p-4 border-black hover:bg-green-500 hover:border duration-500 rounded-2xl bg-blue-600'>
+                SEE MORE
+              </button>
+            </div>
+          </div>
 
-      
+
 
         ) : (
           <p>Malumot yo`q</p>
