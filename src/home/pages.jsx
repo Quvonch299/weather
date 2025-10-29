@@ -3,6 +3,7 @@ import { FaBloggerB, FaCamera, FaHome, FaPhoneAlt, FaVideo, FaBars, FaTimes } fr
 import { IoClose } from 'react-icons/io5'
 import { LuLogOut } from 'react-icons/lu'
 import { TiWeatherPartlySunny } from 'react-icons/ti'
+import { Link } from 'react-router'
 
 export default function Pages() {
   const [open, setOpen] = useState(false)
@@ -33,9 +34,9 @@ export default function Pages() {
           </div>
 
           <div className="grid gap-3 mb-10">
-            <span className='flex items-center gap-5 text-[20px] mb-7'><FaHome className='text-yellow-300' /><a className='text-black hover:text-gray-700 transition-all' href="#">Home</a></span>
-            <span className='flex items-center gap-5 text-[20px] mb-7'><FaBloggerB className='text-yellow-300' /><a className='text-black hover:text-gray-700 transition-all' href="#">Blog</a></span>
-            <span className='flex items-center gap-5 text-[20px] mb-7'><FaCamera className='text-yellow-300' /><a className='text-black hover:text-gray-700 transition-all' href="#">Photos</a></span>
+            <span className='flex items-center gap-5 text-[20px] mb-7'><FaHome className='text-yellow-300' /><p  className='text-black hover:text-gray-700 transition-all' href="#">Home</p></span>
+            <Link to='/map' className='flex items-center gap-5 text-[20px] mb-7'><FaBloggerB className='text-yellow-300' /><p className='text-black hover:text-gray-700 transition-all' href="#">Blog</p></Link>
+            <span className='flex items-center gap-5 text-[20px] mb-7'><FaCamera className='text-yellow-300' /><p className='text-black hover:text-gray-700 transition-all' href="#">Photos</p></span>
             <span className='flex items-center gap-5 text-[20px] mb-7'><FaVideo className='text-yellow-300' /><a className='text-black hover:text-gray-700 transition-all' href="#">Videos</a></span>
             <span className='flex items-center gap-5 text-[20px]'><FaPhoneAlt className='text-yellow-300' /><a className='text-black hover:text-gray-700 transition-all' href="#">Phone</a></span>
           </div>
