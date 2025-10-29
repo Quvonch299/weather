@@ -41,7 +41,7 @@ export default function Advanced({ city,setCity }) {
     setIsLoading(true)
     try {
       const res = await axios.get(
-        'https://api.openweathermap.org/data/2.5/forecast?q=buxoro&units=metric&appid=7ff55054f53ec5c371bb065ff9e9f223&lang=ru'
+        `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=7ff55054f53ec5c371bb065ff9e9f223&lang=ru`
       )
       console.log(res.data)
       setPosts(res.data)
@@ -77,7 +77,7 @@ setCity('')
                 </div>
                 <span className='flex justify-center items-center mt-4'>
                   <div className='text-2xl font-semibold'>
-                    <p className="text-3xl mb-2">Uzbekistan, {posts.city.name}</p>
+                    <p className="text-3xl mb-2"> {posts.city.name}</p>
                     <h2 className='text-xl opacity-90 flex items-center gap-2'>
                       {getWeatherIcon(posts.list[0].weather[0].main, 24)}
                       {posts.list[0].weather[0].description}
@@ -153,7 +153,7 @@ setCity('')
               </h2>
             </div>
             <div className='grid grid-cols-1 gap-6'>
-              <RightCard temp={posts.list[0].main.temp} wind={posts.list[34].wind.speed} />
+              <RightCard temp={posts.list[0].main.temp} wind={posts.list[34].wind.speed}  />
               <RightCard temp={posts.list[1].main.temp} wind={posts.list[5].wind.speed} />
               <RightCard temp={posts.list[10].main.temp} wind={posts.list[23].wind.speed} />
               <RightCard temp={posts.list[30].main.temp} wind={posts.list[23].wind.speed} />
