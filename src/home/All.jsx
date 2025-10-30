@@ -7,7 +7,7 @@ export default function All() {
     const [city, setCity] = useState("")
   
   return (
-    <div >
+    <div className='max-w-7xl m-auto pt-9' >
         <Input city={city} setCity={setCity} />
         <Pages />
         <Advanced city={city} setCity={setCity} />

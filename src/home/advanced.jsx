@@ -8,7 +8,6 @@ import { GrLinkNext } from 'react-icons/gr'
 export default function Advanced({ city,setCity }) {
   const [posts, setPosts] = useState(null)
   const [isLoading, setIsLoading] = useState(false)
-
   const getWeatherIcon = (weatherMain, size = 30) => {
     const iconStyle = { fontSize: size, color: '#ffffff' }
     
@@ -60,7 +59,7 @@ export default function Advanced({ city,setCity }) {
   }, [city, GetData, setCity])
 
   return (
-    <div className='container mx-auto px-4 mt-9 flex justify-between'>
+    <div className='container mx-auto px-4 mt-9 flex justify-between max-w-7xl m-auto pt-9'>
       {isLoading ? (
         <div className="flex items-center justify-center w-full min-h-[60vh]">
           <div className="flex flex-col items-center gap-4">

@@ -9,7 +9,7 @@ export default function Pages() {
   const [open, setOpen] = useState(false)
 
   return (
-    <>
+    <div className='max-w-7xl m-auto pt-9'>
       <div
         onClick={() => setOpen(!open)}
         className="fixed top-11 left-4 z-50 p-2 rounded-full bg-yellow-300 text-black shadow-lg hover:bg-yellow-400 cursor-pointer"
@@ -34,7 +34,7 @@ export default function Pages() {
           </div>
 
           <div className="grid gap-3 mb-10">
-            <span className='flex items-center gap-5 text-[20px] mb-7'><FaHome className='text-yellow-300' /><p  className='text-black hover:text-gray-700 transition-all' href="#">Home</p></span>
+            <Link to='/' className='flex items-center gap-5 text-[20px] mb-7'><FaHome className='text-yellow-300' /><p  className='text-black hover:text-gray-700 transition-all' href="#">Home</p></Link>
             <Link to='/map' className='flex items-center gap-5 text-[20px] mb-7'><FaBloggerB className='text-yellow-300' /><p className='text-black hover:text-gray-700 transition-all' href="#">Blog</p></Link>
             <span className='flex items-center gap-5 text-[20px] mb-7'><FaCamera className='text-yellow-300' /><p className='text-black hover:text-gray-700 transition-all' href="#">Photos</p></span>
             <span className='flex items-center gap-5 text-[20px] mb-7'><FaVideo className='text-yellow-300' /><a className='text-black hover:text-gray-700 transition-all' href="#">Videos</a></span>
@@ -46,7 +46,7 @@ export default function Pages() {
           </div>
         </div>
       </aside>
-    </>
+    </div>
   )
 }
   
