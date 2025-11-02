@@ -2,5 +2,5 @@
 @import "tailwindcss";
 
 .bg{
-    background: url(./weather.jpg) center/cover;
+    background: url(/weather.jpg) center/cover;
 }

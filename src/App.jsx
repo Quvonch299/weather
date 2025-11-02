@@ -4,7 +4,7 @@ import Map1 from './home/Map1'
 import Pages from './home/pages'
 export default function App() {
   return (
-    <div className='bg h-[120vh] '>
+    <div className='bg h-[120vh]  '>
       <div className="">
 
               <Pages />
