@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { FaBloggerB, FaCamera, FaHome, FaPhoneAlt, FaVideo, FaBars, FaTimes } from 'react-icons/fa'
 import { IoClose } from 'react-icons/io5'
 import { LuLogOut } from 'react-icons/lu'
+import { TbMap, TbMapOff } from 'react-icons/tb'
 import { TiWeatherPartlySunny } from 'react-icons/ti'
 import { Link } from 'react-router'
 
@@ -35,7 +36,7 @@ export default function Pages() {
 
           <div className="grid gap-3 mb-10">
             <Link to='/' className='flex items-center gap-5 text-[20px] mb-7'><FaHome className='text-yellow-300' /><p  className='text-black hover:text-gray-700 transition-all' href="#">Home</p></Link>
-            <Link to='/map' className='flex items-center gap-5 text-[20px] mb-7'><FaBloggerB className='text-yellow-300' /><p className='text-black hover:text-gray-700 transition-all' href="#">Blog</p></Link>
+            <Link to='/map' className='flex items-center gap-5 text-[20px] mb-7'><TbMap className='text-yellow-300' /><p className='text-black hover:text-gray-700 transition-all' href="#">Map</p></Link>
             <span className='flex items-center gap-5 text-[20px] mb-7'><FaCamera className='text-yellow-300' /><p className='text-black hover:text-gray-700 transition-all' href="#">Photos</p></span>
             <span className='flex items-center gap-5 text-[20px] mb-7'><FaVideo className='text-yellow-300' /><a className='text-black hover:text-gray-700 transition-all' href="#">Videos</a></span>
             <span className='flex items-center gap-5 text-[20px]'><FaPhoneAlt className='text-yellow-300' /><a className='text-black hover:text-gray-700 transition-all' href="#">Phone</a></span>
